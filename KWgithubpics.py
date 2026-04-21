@@ -4,10 +4,10 @@ from openpyxl_image_loader import SheetImageLoader
 import os
 
 # Configuration variables
-excel_path = r"O:\NIA\PORTFOLIOS TEAM\GE Analytics\6. Power BI\4. PBI Cleint Projects\UCL RCA\UCL Data.xlsx"
-sheet_name = 'UCL Summary'
-image_column = 'R' # Column containing the photos
-id_column = 'B'    # Column containing names or IDs to name the photo files
+excel_path = r"C:\Users\HVe\Desktop\Kennedy Wilson Asset Book.xlsx"
+sheet_name = 'Asset Specification'
+image_column = 'D' # Column containing the photos
+id_column = 'C'    # Column containing names or IDs to name the photo files
 github_user = 'H1470'
 github_repo = 'KWphotos'
 branch = 'main'
@@ -23,11 +23,11 @@ image_loader = SheetImageLoader(sheet) # Maps images to their specific cells
 output_data = []
 
 # Iterate through the rows to extract and map
-print(f"Starting to iterate from row 2 to {sheet.max_row}...")
+print(f"Starting to iterate from row 7 to {sheet.max_row}...")
 images_found = 0
 rows_with_id = 0
 
-for row in range(2, sheet.max_row + 1):
+for row in range(7, sheet.max_row + 1):
     id_val = str(sheet[f"{id_column}{row}"].value)
     img_cell = f"{image_column}{row}"
     
