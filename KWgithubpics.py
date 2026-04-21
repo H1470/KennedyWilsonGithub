@@ -6,7 +6,7 @@ import os
 # Configuration variables
 excel_path = r"C:\Users\HVe\Desktop\Kennedy Wilson Asset Book.xlsx"
 sheet_name = 'Asset Specification'
-image_column = 'D' # Column containing the photos
+image_column = 'E' # Column containing the photos
 id_column = 'C'    # Column containing names or IDs to name the photo files
 github_user = 'H1470'
 github_repo = 'KennedyWilsonGithub'
@@ -43,12 +43,12 @@ for row in range(7, sheet.max_row + 1):
         safe_id = id_val.strip()  # Remove leading/trailing whitespace
         for char in invalid_chars:
             safe_id = safe_id.replace(char, '_')
-        filename = f"{safe_id}.png"
+        filename = f"SP{safe_id}.png"
         image.save(f"{folder}/{filename}")
         
         # Construct the raw GitHub URL predictably
         raw_url = f"https://raw.githubusercontent.com/{github_user}/{github_repo}/{branch}/{folder}/{filename}"
-        output_data.append({"Property ID": f"{id_val}", "Raw GitHub Link": raw_url})
+        output_data.append({"Property ID": f"SP{id_val}", "Raw GitHub Link": raw_url})
 
 print(f"\nDebug info:")
 print(f"  Rows with ID in column C: {rows_with_id}")
