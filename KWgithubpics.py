@@ -9,7 +9,7 @@ sheet_name = 'Asset Specification'
 image_column = 'E' # Column containing the photos
 id_column = 'C'    # Column containing names or IDs to name the photo files
 github_user = 'H1470'
-github_repo = 'KWphotos'
+github_repo = 'KennedyWilsonGithub'
 branch = 'main'
 folder = 'Images'  # Local folder to save images
 
